@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/Registro.css}" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center neon-hover text-warning" th:href="@{/}">
+        <img th:src="@{/imagenes/Logo.png}" alt="Logo de Easy Job">Easy Job
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active neon-hover text-warning" th:href="@{/login}">Login</a>
+          <a class="nav-link neon-hover text-warning" th:href="@{/registro}">Registrarse</a>
+          <a class="nav-link neon-hover text-warning" href="#">Sobre Nosotros</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenedor del formulario -->
+  <div class="Formulario">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="text-center text-warning mb-4">Registro de Usuario</h3>
+
+  <form th:action="@{/registro}" th:object="${usuario}" method="post">
+  <!-- Cédula (ID de usuario) -->
+  <label for="cedula" class="form-label">Cédula</label>
+  <input type="number" id="cedula" th:field="*{idusuarios}" class="form-control mb-3" required>
+
+  <!-- Nombre -->
+  <label for="nombre" class="form-label">Nombre</label>
+  <input type="text" id="nombre" th:field="*{nombre}" class="form-control mb-3" required>
+
+  <!-- Apellido -->
+  <label for="apellido" class="form-label">Apellido</label>
+  <input type="text" id="apellido" th:field="*{apellido}" class="form-control mb-3" required>
+
+  <!-- Correo -->
+  <label for="correo" class="form-label">Correo</label>
+  <input type="email" id="correo" th:field="*{correo}" class="form-control mb-3" required>
+
+  <!-- Rol (Cargo) -->
+  <label for="rol" class="form-label">Rol (Cargo)</label>
+  <select id="rol" name="rol" class="form-control mb-3" required>
+    <option value="">Seleccione un rol</option>
+    <option th:each="r : ${roles}" th:value="${r.id_roles}" th:text="${r.tipoRol}"></option>
+  </select>
+
+  <!-- Sucursal -->
+  <label for="sucursal" class="form-label">Sucursal</label>
+  <select id="sucursal" name="sucursal" class="form-control mb-3" required>
+    <option value="">Seleccione una sucursal</option>
+    <option th:each="s : ${sucursales}" th:value="${s.id_sucursal}" th:text="${s.nombreSucursal}"></option>
+  </select>
+
+  <!-- Contraseña -->
+  <label for="contrasena" class="form-label">Contraseña</label>
+  <input type="password" id="contrasena" th:field="*{contrasena}" class="form-control mb-3" required>
+
+  <!-- Botón de registro -->
+  <button type="submit" class="btn btn-success w-100 mt-2">Registrarse</button>
+</form>
+
+
+
+        <div class="text-center mt-3">
+          <p>¿Ya tienes cuenta? <a th:href="@{/login}" class="text-warning neon-hover">Inicia sesión</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-0 text-warning">© 2025 Easy Job - Todos los derechos reservados</p>
+      <small class="text-warning">Contacto: info@easyjob.com</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
