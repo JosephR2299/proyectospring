@@ -6,9 +6,6 @@ body {
   padding-top: 80px;
     /* NUEVO: Añade espacio para el navbar fijo */
 }
-
-
-
 /* === NAVBAR === */
 nav.navbar {
   background: linear-gradient(135deg, #252d40 0%, #374e5f 100%);
