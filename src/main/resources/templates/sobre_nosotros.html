@@ -1,119 +1,19 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre Nosotros</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" th:href="@{/css/sobre.css}" />
 
-  <style>
-    /* ===== FONDO GLOBAL ===== */
-    html, body { height: 100%; min-height: 100%; margin: 0; }
-    body{
-      font-family:'Poppins',sans-serif;
-      background: linear-gradient(135deg,#252d40 0%,#374e5f 100%) !important;
-      background-attachment: fixed;
-      color:#fff;
-      padding-top: 0;
-    }
 
-    /* Contenedores sin bloques */
-    section,.container,.row,.col-12,.col-lg-6,.col-lg-10{background:transparent !important;}
-    section.bg-light{background:transparent !important;}
-
-    /* ===== NAVBAR - NUEVO DISEÑO ===== */
-    nav.navbar {
-      background: linear-gradient(135deg, #252d40 0%, #374e5f 100%);
-      padding: 1rem 0;
-    }
-    .navbar .nav-link {
-      color: #fff;
-      margin: 0 10px;
-      transition: color 0.3s ease;
-    }
-    .navbar .nav-link:hover {
-      color: #ffe082;
-    }
-    .navbar-brand {
-      color: #ffc107 !important;
-      font-weight: 600;
-    }
-    .navbar-brand img {
-      height: 60px;
-      margin-right: 10px;
-    }
-    .navbar-toggler{ 
-      border-color:rgba(255,255,255,.35) !important; 
-    }
-    .navbar-toggler-icon{
-      background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 991px) {
-      .navbar-collapse {
-        border-radius: 10px;
-        padding: 10px;
-      }
-    }
-
-    /* Efecto neon */
-    .neon-hover{ 
-      color: #fff;
-      transition: all 0.3s ease-in-out; 
-      cursor: pointer; 
-    }
-    .neon-hover:hover{
-      color: #0ff !important;
-      text-shadow: 0 0 5px #208585, 0 0 10px #208585, 0 0 20px #208585, 0 0 40px #208585;
-      transform: scale(1.05);
-    }
-
-    /* ===== Tarjetas/listas SIN BORDES NI DIVISIONES ===== */
-    .card{ 
-      background:transparent !important; 
-      border:none !important; 
-      box-shadow:none !important; 
-    }
-    .card:hover{ 
-      box-shadow:none !important; 
-      transform:none !important; 
-    }
-    .card.border-success {
-      border: none !important;
-    }
-    .list-group,.list-group-flush,.list-group-item{
-      background:transparent !important; 
-      border:none !important; 
-      color:#e9ecef !important;
-    }
-
-    h1,h2,h3,h4,p.lead,p.fs-5{ color:#fff !important; }
-    .text-primary{ color:#9ec5fe !important; }
-    .text-success{ color:#a6e3c5 !important; }
-
-    .py-5{ padding-top:3rem !important; padding-bottom:3rem !important; }
-    .mb-5{ margin-bottom:3rem !important; }
-    .shadow-sm{ box-shadow:none !important; }
-
-    /* ===== FOOTER DE LADO A LADO ===== */
-    footer{
-      background: rgba(0,0,0,0.88) !important;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 24px 0;
-      margin-top: 3rem;
-      width: 100%;
-    }
-    footer p,
-    footer small{
-      color:#ffc107 !important;
-      margin: 0;
-    }
-    footer small{ display:block; margin-top:6px; }
-  </style>
 </head>
+
 <body>
 
   <!-- NAVBAR - NUEVO DISEÑO -->
@@ -152,7 +52,57 @@
       </div>
     </div>
   </section>
-  
+
+  <!-- EL DESAFÍO QUE ABORDAMOS -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center mb-4 fw-bold text-warning">⚠️ El Desafío que Abordamos</h2>
+          <p class="text-center mb-5 fs-5">
+            Las empresas con múltiples sucursales enfrentan serios problemas operativos que afectan la productividad y
+            satisfacción laboral.
+          </p>
+
+          <div class="row">
+            <div class="col-lg-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h3 class="card-title h4 mb-3 text-warning">Principales Problemáticas</h3>
+
+                  <p class="card-text mb-2 fw-semibold">Comunicación Deficiente:</p>
+                  <p class="card-text mb-4">Falta de canales efectivos entre sucursales que genera retrasos y
+                    malentendidos operativos.</p>
+
+                  <p class="card-text mb-2 fw-semibold">Gestión Lenta de Incapacidades:</p>
+                  <p class="card-text mb-4">Retrasos significativos en el procesamiento de documentos médicos hacia
+                    Recursos Humanos.</p>
+
+                  <p class="card-text mb-2 fw-semibold">Procesos Documentales Lentos:</p>
+                  <p class="card-text mb-3">Demoras excesivas en solicitudes de documentos corporativos que obstaculizan
+                    el trabajo diario.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h3 class="card-title h4 mb-3 text-warning">Control de Asistencia Inadecuado</h3>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Sin registro de horas extras.</li>
+                    <li class="list-group-item">Falta de control en horarios de entrada, salida y almuerzos.</li>
+                    <li class="list-group-item">Empleados desinformados sobre sus horarios laborales.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div><!-- row -->
+        </div><!-- col-12 -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </section>
+
 
   <!-- NUESTRA SOLUCIÓN -->
   <section class="py-5 bg-light">
@@ -161,7 +111,8 @@
         <div class="col-12">
           <h2 class="text-center mb-5 fw-bold text-success">🎯 Nuestra Solución</h2>
           <p class="text-center mb-5 fs-5">
-            Plataforma especializada para grandes empresas con múltiples puntos de venta que centraliza y optimiza la gestión de recursos humanos.
+            Plataforma especializada para grandes empresas con múltiples puntos de venta que centraliza y optimiza la
+            gestión de recursos humanos.
           </p>
 
           <div class="row">
@@ -169,13 +120,15 @@
               <div class="card h-100">
                 <div class="card-body">
                   <h3 class="card-title h4 mb-3 text-success">Funcionalidades Principales</h3>
-                  
+
                   <p class="card-text mb-2 fw-semibold">Gestión Centralizada de Solicitudes:</p>
-                  <p class="card-text mb-4">Sistema unificado para administrar solicitudes de empleados desde cualquier sucursal con seguimiento en tiempo real.</p>
-                  
+                  <p class="card-text mb-4">Sistema unificado para administrar solicitudes de empleados desde cualquier
+                    sucursal con seguimiento en tiempo real.</p>
+
                   <p class="card-text mb-2 fw-semibold">Control Automatizado de Asistencia:</p>
-                  <p class="card-text mb-3">Registro digital de entrada y salida, con control de horas extras, retrasos y faltas.</p>
-                  
+                  <p class="card-text mb-3">Registro digital de entrada y salida, con control de horas extras, retrasos
+                    y faltas.</p>
+
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">Reportes automatizados por sucursal.</li>
                     <li class="list-group-item">Seguimiento detallado de asistencia.</li>
@@ -214,4 +167,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
