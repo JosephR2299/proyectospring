@@ -3,11 +3,28 @@ body {
   background: linear-gradient(135deg, #393a44 0%, #534e5600 100% );
   min-height: 100vh;
   color: black;
+  padding-top: 80px;
+    /* NUEVO: Añade espacio para el navbar fijo */
 }
 
 /* === NAVBAR === */
 nav.navbar {
   background: linear-gradient(135deg, #252d40 0%, #374e5f 100%);
+  padding: 1rem 0;
+  position: fixed;
+  /* NUEVO: Hace que el navbar sea fijo */
+  top: 0;
+  /* NUEVO: Lo posiciona arriba */
+  left: 0;
+  /* NUEVO: Alineado a la izquierda */
+  right: 0;
+  /* NUEVO: Alineado a la derecha */
+  width: 100%;
+  /* NUEVO: Ocupa todo el ancho */
+  z-index: 1030;
+  /* NUEVO: Mantiene el navbar encima de otros elementos */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  /* NUEVO: Sombra para efecto visual */
 }
 .navbar .nav-link {
   color: #fff;
